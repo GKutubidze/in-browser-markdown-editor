@@ -1,0 +1,18 @@
+@import "../../variables.scss";
+.preview{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $cultured;
+    font-size: 14px;
+    color:$gray;
+    height: 42px;
+    width: 100%;
+}
+.view{
+    margin-right: 15px;
+    cursor: pointer;
+}
+.markdown{
+    margin-left: 16px;
+}

@@ -1,0 +1,33 @@
+
+// .textarea {
+//     height: 100vh;
+//     resize: none;
+//    padding: 10px;
+//    font-size: 16px;
+//    border: none;
+//    outline: none;
+//     padding:16px;
+//     width: 100%;
+//     resize: 'none';
+//     // overflow-y: hidden;
+//  }
+ 
+.textarea {
+    flex: 1; /* This makes the textarea take up the available space */
+    resize: none;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding doesn't affect the height */
+    overflow-y: hidden;
+
+  
+}
+.main{
+    height: 100vh; /* or any other height as needed */
+    display: flex;
+    flex-direction: column;
+}
+

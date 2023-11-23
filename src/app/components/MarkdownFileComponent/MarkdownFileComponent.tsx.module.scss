@@ -1,0 +1,38 @@
+@import "../../variables.scss";
+
+.main {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  cursor: pointer;
+  padding: 5px;
+  &:hover {
+    background-color: #ffffff14;
+    width: 200px;
+    border-radius: 5px;
+  }
+  transition: all .3s ease;
+}
+
+.content {
+  p {
+    color: $gray;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+  }
+  .name {
+    color: $white;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+.selected {
+  background-color:#ffffff14;
+  width: 200px;
+  border-radius: 5px;
+}

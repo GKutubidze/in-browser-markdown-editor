@@ -1,0 +1,61 @@
+@import "../../variables.scss";
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh; /* No quotes, vh is a unit */
+  width: 250px; /* No quotes */
+  background-color: $dark-jungle-green;
+  z-index: 1000; /* Lowercase z and no capital I */
+}
+
+.markdown {
+  margin-left: 24px;
+  margin-top: 27px;
+  color: white;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 5px;
+}
+
+.document {
+  margin-top: 27px;
+  margin-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 202px;
+  button {
+    color: $white;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 2px;
+    background-color: $fire-opal;
+    border-radius: 4px;
+    height: 40px;
+    border: none;
+    outline: none;
+    text-align: center;
+    cursor: pointer;
+  }
+  p {
+    color: $gray;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 2px;
+  }
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  gap:26px;
+  margin-top:24px;
+  margin-left: 24px;
+}
