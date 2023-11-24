@@ -8,11 +8,16 @@
     display: flex;
     justify-content: space-between;
  }
+ 
 .menu {
     background-color: $onyx;
-    padding: 21px 16px 21px 17px;
-    
-   
+    // padding: 21px 16px 21px 17px;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease
 }
 
 .first{
@@ -55,10 +60,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 56px;
+    width: 66px;
     height:100%;
     background-color: $onyx;
     cursor: pointer;
+    padding-left: 10px;
  }
 
 .conditional{
@@ -68,3 +74,42 @@
 .deleteicon,.saveicon{
     cursor: pointer;
 }
+
+.markdown {
+    margin-left: 24px;
+    margin-top: 27px;
+    color: white;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 5px;
+  }
+
+  .line{
+    width: 1px;
+    height: 40px;
+    background-color: #5A6069;
+    margin:auto 0;
+    margin-left: 27px;
+    margin-right: 27px;
+
+  }
+ 
+@media screen and (min-width: 768px) {
+     .saveContainer{
+        width: 152px;
+        justify-content: left;
+        font-weight: 400;
+
+     }
+     .saveicon{
+        margin:12px 7px 16px 16px;
+      }
+    .header{
+        height: 72px;
+    }
+    .menu{
+        height: 72px;
+    }
+  }

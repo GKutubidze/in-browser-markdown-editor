@@ -6,6 +6,7 @@ import SaveDelete from "./SaveDelete";
 import Close from "./Close";
 import DocumentComponent from "./DocumentComponent";
 import type { MarkdownFile, MarkdownFiles } from "../Interfaces";
+import {useWindowWidth} from "../../hooks/useWindowWidth"
 
 interface Props {
   isOpen: boolean;
@@ -20,7 +21,7 @@ interface Props {
 }
 const Header = (props: Props) => {
   const { isOpen, setIsOpen, markdownList, setMarkdownList, selectId,onDelete} = props;
-
+const width=useWindowWidth();
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
@@ -32,6 +33,12 @@ const Header = (props: Props) => {
           <Image src={menu} alt="" style={{ cursor: "pointer" }} />
         </div>
         <Close isOpen={isOpen} setIsOpen={setIsOpen} />
+        {width>768 && <div className={styles.markdown}>
+        <p>MARKDOWN</p>
+      </div>
+      }
+      {width>768 &&         <div className={styles.line}></div>
+}
         <DocumentComponent
           markdownList={markdownList}
           setMarkdownList={setMarkdownList}

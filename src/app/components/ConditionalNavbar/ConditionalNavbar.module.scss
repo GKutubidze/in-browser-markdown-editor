@@ -8,6 +8,7 @@
   width: 250px; /* No quotes */
   background-color: $dark-jungle-green;
   z-index: 1000; /* Lowercase z and no capital I */
+  transition: all 0.3s ease
 }
 
 .markdown {

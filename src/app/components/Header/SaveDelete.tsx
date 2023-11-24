@@ -4,7 +4,7 @@ import styles from "./Header.module.scss";
 import deleteicon from "../../../../public/assets/icon-delete.svg";
 import saveicon from "../../../../public/assets/icon-save.svg";
 import type { MarkdownFile, MarkdownFiles } from "../Interfaces";
-
+import {useWindowWidth} from "../../hooks/useWindowWidth"
 type Props = {
   isOpen: boolean;
   markdownList: MarkdownFiles;
@@ -14,11 +14,11 @@ type Props = {
 };
 
 export default function SaveDelete(props: Props) {
+  const width=useWindowWidth();
   const { isOpen, markdownList, setMarkdownList, selectId, onDelete } = props;
   const handleDelete = () => {
     onDelete(selectId); // Call onDelete when delete icon is clicked
   };
-  console.log(markdownList.find((item)=>item.id==selectId));
 
   function handleSave(){
     downloadMarkdownFile(
@@ -26,9 +26,7 @@ export default function SaveDelete(props: Props) {
       markdownList.find((item) => item.id === selectId)?.name ||
         "Untitled"
     )
-    console.log(selectId);
-    console.log("content");
-    console.log(markdownList[selectId])
+   
   }
   return (
     !isOpen && (
@@ -42,11 +40,9 @@ export default function SaveDelete(props: Props) {
         <div
           className={styles.saveContainer}
           onClick={handleSave}
-
- 
-          
         >
           <Image src={saveicon} alt="" className={styles.saveicon} />
+          {width>767  ? <p>Save Changes </p>:""}
         </div>
       </div>
     )

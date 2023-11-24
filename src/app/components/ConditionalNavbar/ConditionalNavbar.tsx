@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styles from "./ConditionalNavbar.module.scss";
 import MarkdownFileComponent from "../MarkdownFileComponent/MarkdownFileComponent";
 import type { MarkdownFile, MarkdownFiles } from "../Interfaces"
+import {useWindowWidth} from "../../hooks/useWindowWidth"
+
 type Props={
   isOpen:boolean;
   markdownList: MarkdownFiles;
@@ -26,6 +28,7 @@ export default function ConditionalNavbar(props:Props) {
   }
   const [selectedItem, setSelectedItem] = useState<number | null>(null);
   const [isSelected,setIsSelected]=useState<boolean>(false);
+  const width=useWindowWidth();
   const handleItemClick = (item: MarkdownFile) => {
     setSelectId(item.id);
     setMarkdownText(item.content);
@@ -42,9 +45,9 @@ export default function ConditionalNavbar(props:Props) {
 
   return isOpen&&(
     <div className={styles.navbar}>
-      <div className={styles.markdown}>
+        {width<768 && <div className={styles.markdown}>
         <p>MARKDOWN</p>
-      </div>
+      </div>}
       <div className={styles.document}>
         <div>
           <p>MY DOCUMENT</p>
