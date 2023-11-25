@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 
 export function useWindowWidth() {
-  const isClient = typeof window === 'object'; // Check if window object is available
+  const isClient = typeof window !== 'undefined'; // Check if window object is available
 
   const [width, setWidth] = useState(isClient ? window.innerWidth : 0);
 
   useEffect(() => {
     if (!isClient) {
-      return; // Do nothing if it's not in a browser environment
+      return () => {}; // Return an empty function if it's not in a browser environment
     }
 
     const handleResize = () => {

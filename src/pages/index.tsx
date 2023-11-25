@@ -6,7 +6,7 @@ import TextComponent from "@/app/components/TextArea/TextComponent";
 import data from "../app/data.json";
 import ConditionalNavbar from "@/app/components/ConditionalNavbar/ConditionalNavbar";
 import type { MarkdownFile, MarkdownFiles } from "../app/components/Interfaces";
-
+import Head from "next/head";
 const index = () => {
   const [markdownText, setMarkdownText] = useState<string>(data[1].content);
   const [isPreview, setIsPreview] = useState<boolean>(false);
@@ -30,6 +30,11 @@ const index = () => {
 console.log(markdownList);
   return (
     <RootLayout>
+      <Head>
+        <title>
+          Markdow Editor
+        </title>
+      </Head>
       <ConditionalNavbar
         isOpen={isOpen}
         markdownList={markdownList}
