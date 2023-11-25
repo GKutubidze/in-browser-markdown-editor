@@ -1,14 +1,16 @@
  import './globals.scss'
 
 
+
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <div>
+    <html lang='en'>
       {children}
-    </div>
+    </html>
   )
 }
