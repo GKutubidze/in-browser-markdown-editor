@@ -27,7 +27,6 @@ const index = () => {
       setSelectId(0);
     }
   };
-console.log(markdownList);
   return (
     <RootLayout>
       <Head>

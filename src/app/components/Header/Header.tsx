@@ -6,7 +6,9 @@ import SaveDelete from "./SaveDelete";
 import Close from "./Close";
 import DocumentComponent from "./DocumentComponent";
 import type { MarkdownFile, MarkdownFiles } from "../Interfaces";
-import {useWindowWidth} from "../../hooks/useWindowWidth"
+import { useWindowWidth } from "../../hooks/useWindowWidth";
+import LineComponent from "./LineComponent";
+import MarkdownTitle from "../MarkdownTitile/MarkdownTitle";
 
 interface Props {
   isOpen: boolean;
@@ -17,11 +19,17 @@ interface Props {
   markdownText: string;
   setMarkdownText: React.Dispatch<React.SetStateAction<string>>;
   onDelete: (id: number) => void; // Add onDelete prop
- 
 }
 const Header = (props: Props) => {
-  const { isOpen, setIsOpen, markdownList, setMarkdownList, selectId,onDelete} = props;
-const width=useWindowWidth();
+  const {
+    isOpen,
+    setIsOpen,
+    markdownList,
+    setMarkdownList,
+    selectId,
+    onDelete,
+  } = props;
+  const width = useWindowWidth();
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
@@ -33,12 +41,10 @@ const width=useWindowWidth();
           <Image src={menu} alt="" style={{ cursor: "pointer" }} />
         </div>
         <Close isOpen={isOpen} setIsOpen={setIsOpen} />
-        {width>768 && <div className={styles.markdown}>
-        <p>MARKDOWN</p>
-      </div>
-      }
-      {width>768 &&         <div className={styles.line}></div>
-}
+
+        <MarkdownTitle isHide={true} />
+
+        <LineComponent />
         <DocumentComponent
           markdownList={markdownList}
           setMarkdownList={setMarkdownList}
@@ -50,8 +56,7 @@ const width=useWindowWidth();
         markdownList={markdownList}
         setMarkdownList={setMarkdownList}
         selectId={selectId}
-        onDelete={onDelete} 
- 
+        onDelete={onDelete}
       />
     </div>
   );

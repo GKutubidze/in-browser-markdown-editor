@@ -3,7 +3,8 @@ import styles from "./ConditionalNavbar.module.scss";
 import MarkdownFileComponent from "../MarkdownFileComponent/MarkdownFileComponent";
 import type { MarkdownFile, MarkdownFiles } from "../Interfaces"
 import {useWindowWidth} from "../../hooks/useWindowWidth"
-
+import MarkdownTitle from "../MarkdownTitile/MarkdownTitle";
+import DocumentTitle from "./DocumentTitle"
 type Props={
   isOpen:boolean;
   markdownList: MarkdownFiles;
@@ -45,16 +46,16 @@ export default function ConditionalNavbar(props:Props) {
 
   return isOpen&&(
     <div className={styles.navbar}>
-        {width<768 && <div className={styles.markdown}>
-        <p>MARKDOWN</p>
-      </div>}
-      <div className={styles.document}>
+      <MarkdownTitle isHide={false}/>
+        
+      {/* <div className={styles.document}>
         <div>
           <p>MY DOCUMENT</p>
         </div>
         <button onClick={addFile}>New Document</button>
-      </div>
-      <div className={styles.container}>
+      </div> */}
+    <DocumentTitle addFile={addFile}/>
+       <div className={styles.container}>
       {markdownList.map((item, index) => (
        <MarkdownFileComponent
        key={index}
