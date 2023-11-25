@@ -75,16 +75,7 @@
     cursor: pointer;
 }
 
-.markdown {
-    margin-left: 24px;
-    margin-top: 27px;
-    color: white;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 5px;
-  }
+ 
 
   .line{
     width: 1px;
@@ -112,7 +103,8 @@
     .menu{
         height: 72px;
     }
-    .document{
-        margin-left: 0;
-    }
+   
   }
+  @media screen and (min-width: 769px) { .document{
+    margin-left: 0;
+}}
